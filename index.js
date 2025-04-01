@@ -20,7 +20,7 @@ app.post("/", async (req,res)=>{
     console.log("recieved: "+text)
 
 
-    exec("echo '"+ + "' | ./../piper/piper --model ./../piper/de_DE-thorsten-high.onnx --output_file tts.wav", () =>{
+    exec("echo '"+ text + "' | ./../piper/piper/piper --model ./../piper/de_DE-thorsten-high.onnx --output_file tts.wav", () =>{
 
         console.log("pipered");
         var filePath = path.join(__dirname, 'tts.wav');
