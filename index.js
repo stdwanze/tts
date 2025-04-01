@@ -29,7 +29,7 @@ app.post("/", async (req,res)=>{
         res.writeHead(200, { 'Content-Type': 'audio/wave',
             'Content-Length': stat.size });
         let readStream = fs.createReadStream("tts.wav")
-        readStream.pipe(response);
+        readStream.pipe(res);
         
     });
 
