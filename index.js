@@ -24,7 +24,7 @@ app.post("/", async (req,res)=>{
 
         console.log("pipered");
         var filePath = path.join(__dirname, 'tts.wav');
-        var stat = fileSystem.statSync(filePath);
+        var stat = fs.statSync(filePath);
 
         res.writeHead(200, { 'Content-Type': 'audio/wave',
             'Content-Length': stat.size });
@@ -32,7 +32,7 @@ app.post("/", async (req,res)=>{
         readStream.pipe(response);
         
     });
-    
+
 
 });
 
