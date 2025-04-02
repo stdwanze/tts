@@ -17,6 +17,7 @@ app.post("/", async (req,res)=>{
 
   
     let text = req.body.text;
+    text = text.replace(/(\r\n|\n|\r)/gm, " ");
     console.log("recieved: "+text)
 
 
